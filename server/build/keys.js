@@ -6,6 +6,6 @@ exports.default = {
         user: 'root',
         port: 3000,
         password: '',
-        database: 'ariadna'
+        database: 'martech'
     }
 };

@@ -1,21 +1,18 @@
 import { Router } from "express";
-import {indexController} from "../controllers/Controller";
+import { controller } from "../controllers/Controller";
 
 class IndexRoutes{
     router: Router = Router();
-
     constructor(){
         this.config();
     }
-
     config(): void{
-        this.router.get('/', indexController.list);
-        this.router.get('/:id', indexController.getOne);
-        this.router.post('/', indexController.create);
-        this.router.put('/:id', indexController.update);
-        this.router.delete('/:id', indexController.delete);
+        this.router.post('/', controller.create);
+        this.router.put('/:id', controller.update);
+        this.router.delete('/:id', controller.delete);
+        this.router.get('/:id', controller.getOne);
+        this.router.get('/', controller.list);
     }
 }
 
-const indexRoutes = new IndexRoutes();
-export default indexRoutes.router;
+export const indexRoutes = new IndexRoutes().router;

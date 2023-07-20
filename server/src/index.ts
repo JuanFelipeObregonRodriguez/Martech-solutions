@@ -1,8 +1,7 @@
 import express, { Application } from 'express';
+import { indexRoutes } from './routes/indexRoutes';
 
 import cors from 'cors';
-
-import indexRoutes from './routes/indexRoutes';
 
 class Server{
     public app: Application;
@@ -22,7 +21,7 @@ class Server{
     }
     start(): void{
         this.app.listen(this.app.get('port'), () => {
-            console.log('server port on', this.app.get('port'));
+            console.log('server on portcd', this.app.get('port'));
         });
     }
 }

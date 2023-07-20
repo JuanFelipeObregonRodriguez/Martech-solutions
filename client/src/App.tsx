@@ -1,35 +1,46 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+
+import { useState, useEffect } from 'react';
+import ProductForm from './components/Form';
+import Round from './assets/Round.jpg';
+import './App.css';
+import ProductTable from './components/Table';
+import axios from 'axios';
 
 function App() {
-  const [count, setCount] = useState(0)
+
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    // Get all categories from the database.
+    void axios.get('/Api')
+      .then(response => response.data)
+      .then(categories => setProducts(categories));
+  }, []);
+
 
   return (
     <>
       <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+        <header className='bg-black'>
+          <h1>style</h1>
+          <img src={Round} alt="" />
+        </header>
+        <div className='form'>
+          <ProductForm />
+        </div>
+        <div className='table'>
+          {products.length > 0 ? (
+            <ProductTable />
+          ) : (
+            <h2>No hay productos</h2>
+          )}
+        </div>
+        <footer className='bg-black'>
+          Terms and conditions
+        </footer>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

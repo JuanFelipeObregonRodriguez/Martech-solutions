@@ -1,7 +1,7 @@
 import {Request, Response, text} from 'express';
 import pool from '../database';
 
-class IndexController{
+class Controller{
  
     public async create (req: Request, res: Response): Promise<void> {
         await pool.query('INSERT INTO productos set ?', [req.body]);
@@ -26,4 +26,4 @@ class IndexController{
     
 }
 
-export const indexController = new IndexController();
+export const controller = new Controller();

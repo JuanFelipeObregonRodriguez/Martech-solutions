@@ -1,6 +1,6 @@
 import mysql from 'mysql';
 
-import keys  from './keys';
+import keys  from './dbCredentials';
 
 const pool = mysql.createPool(keys.database);
 

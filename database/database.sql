@@ -2,7 +2,7 @@ CREATE DATABASE martech;
 
 USE martech;
 
-CREATE TABLE Productos(
+CREATE TABLE Products(
     id INT(12) NOT NULL AUTO_INCREMENT PRIMARY KEY,
     fecha_creacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     nombre VARCHAR(120),
@@ -12,7 +12,7 @@ CREATE TABLE Productos(
     stock INT(12)
 );
 
-CREATE TABLE Categorias(
+CREATE TABLE Category(
     id INT(12) NOT NULL AUTO_INCREMENT PRIMARY KEY,
     nombre VARCHAR(120),
     descripcion VARCHAR(120)

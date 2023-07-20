@@ -1,5 +1,5 @@
 import express, { Application } from 'express';
-import { indexRoutes } from './routes/indexRoutes';
+import { routes } from './routes/routes';
 
 import cors from 'cors';
 
@@ -17,7 +17,7 @@ class Server{
         this.app.use(express.urlencoded({extended:false}));
     }
     routes(): void{
-        this.app.use('/Api/Clothes', indexRoutes);
+        this.app.use('/Api/Clothes', routes);
     }
     start(): void{
         this.app.listen(this.app.get('port'), () => {

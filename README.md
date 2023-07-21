@@ -1,19 +1,96 @@
-# Inventario de tienda de ropa
- Ariadna Communications Group necesita para sus clientes, crear un inventario para una tienda de ropa donde se establezca un sistema CRUD (crear, leer, modificar y eliminar) de productos, adicional a esto cada producto debe tener relacionada su categoría correspondiente.
- 
-# Indicaciones
- 
- # NodeJs Servidor ruta: \Inventario-de-tienda-de-ropa\server
-  
+# Project Title
+
+Clothes stock control, ariadna group test
+
+clothes stock management
+
+
+
+## Documentation
+
+[libraries implemented]
+
+
+(https://tailwindcss.com/)
+(https://vitejs.dev/)
+(https://www.typescriptlang.org/)
+(https://jestjs.io/)
+(https://prettier.io/)
+
+
+
+## Run Locally frontend
+
+
+Go to the project directory
+
+```bash
+  cd client, to run frontend
+```
+
+Install dependencies
+
+```bash
+  npm install
+```
+
+Start the server
+
+```bash
   npm run dev
-  #
+```
+
+## Run Locally backend
+
+```bash
+  cd server, to run backend
+```
+
+Install dependencies
+
+```bash
+  npm install
+```
+
+Start the server
+
+```bash
+ npm run dev
+```
+
+
+## Deployment
+
+To deploy your project generate your dist folder running this
+
+node version 16.19
+
+```bash
+  cd my-project
   npm run build
-  
-  ruta del backend: http://localhost:3000/api
-  
- # Angular Front end ruta: \Inventario-de-tienda-de-ropa\client
-  
-  ng serve
-  
-  ruta del frondend: http://localhost:4200/
- 
+```
+
+
+
+## API Reference
+
+#### Get all items
+
+```http
+  GET /Api
+```
+
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `api_key` | `string` | |
+
+#### create item
+
+```http
+  POST /Api
+```
+
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `id`      | `string` | |
+
